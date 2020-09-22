@@ -1,4 +1,6 @@
-utm
+******************
+utm lib with numba
+******************
 ===
 
 .. image:: https://travis-ci.org/Turbo87/utm.png
@@ -23,15 +25,14 @@ Convert a ``(latitude, longitude)`` tuple into an UTM coordinate:
 
 .. code-block:: python
 
-  >>> utm.from_latlon(51.2, 7.5)
-  (395201.3103811303, 5673135.241182375, 32, 'U')
+  >>> utm.from_latlon(np.array(51.2), np.array(7.5))
+  (array([395201.3103811303]), array([5673135.241182375]), 32, 'U')
 
 The syntax is ``utm.from_latlon(LATITUDE, LONGITUDE)``.
 
 The return has the form ``(EASTING, NORTHING, ZONE_NUMBER, ZONE_LETTER)``.
 
-You can also use NumPy arrays for ``LATITUDE`` and ``LONGITUDE``. In the
-result ``EASTING`` and ``NORTHING`` will have the same shape.  ``ZONE_NUMBER``
+``EASTING`` and ``NORTHING`` will have the same shape.  ``ZONE_NUMBER``
 and ``ZONE_LETTER`` are scalars and will be calculated for the first point of
 the input. All other points will be set into the same UTM zone.  Therefore
 it's a good idea to make sure all points are near each other.
