@@ -1,7 +1,6 @@
 ******************
 utm lib with numba
 ******************
-===
 
 .. image:: https://travis-ci.org/Turbo87/utm.png
 
