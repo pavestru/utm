@@ -19,5 +19,4 @@ setup(
         'Topic :: Scientific/Engineering :: GIS',
     ],
     packages=['utm'],
-    scripts=['scripts/utm-converter'],
 )
